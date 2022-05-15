@@ -1,0 +1,25 @@
+name: Docker Image DC
+
+on:
+  push:
+    branches: [ production ]
+  pull_request:
+    branches: [ production ]
+    
+jobs:
+  heroku_git_deploy_job:
+      runs-on: ubuntu-latest
+      name: Git Deploy job- A job to deploy django app to heroku using git
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: Deploy to Heroku
+          uses: AkhileshNS/heroku-deploy@v3.12.12
+          with: 
+            heroku_app_name : ${{ secrets.HEROKU_APP_NAME }}
+            heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+            heroku_email_address: 'vitor@stahelin.dev'
+            use_git: true
+            git_branch: production
+          env:
+            ENV: development
