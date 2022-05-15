@@ -1,0 +1,22 @@
+version: "3"
+services:
+  web:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 8000:8000
+    environment:
+      ENV: development
+    depends_on:
+      - db
+
+  db:
+    image: postgres:12
+    ports:
+      - 5432:5432
+    volumes:
+      - ./docker/db/pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
