@@ -2,7 +2,7 @@
 Install check-list
 - [ ] Install Docker
 - [ ] Clone Repository
-- [ ] Create local.env in `src/api/core/local.env` from tamplate
+- [ ] Create local.env in `src/api/core/local.env` from template
 - [ ] Create django secrets and put in `local.env`
-- [ ] Set Sntrey DSN in `local.env`
-- [ ] Run `docker-compose up` in root project
+- [ ] Set Sentry DSN in `local.env`
+- [ ] Run `docker-compose up` in the root of this project
