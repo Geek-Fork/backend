@@ -57,8 +57,6 @@ REST_FRAMEWORK = {
     "PAGE_SIZE": 10,
 }
 
-APPEND_SLASH = False  # Check this setting later
-
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
