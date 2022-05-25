@@ -43,13 +43,21 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = ["rest_framework"]
 
 PROJECT_APPS = [
     "api.core",
+    "api.anime",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
+
+REST_FRAMEWORK = {
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 10,
+}
+
+APPEND_SLASH = False  # Check this setting later
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
